@@ -1,7 +1,7 @@
 /* eslint react/no-danger: 0 */
 import _ from 'lodash';
 import React from 'react';
-import FacebookProvider, { Comments } from 'react-facebook';
+import ReactDisqusComments from 'react-disqus-comments';
 import { PostHeading, Share } from '../components';
 
 export default ({ data }) => {
