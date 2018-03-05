@@ -2,7 +2,7 @@ require('dotenv').load();
 
 module.exports = {
   siteMetadata: {
-    title: `YouKnowNow.Info`,
+    title: 'YouKnowNow',
   },
   plugins: [
     'gatsby-plugin-sass',
