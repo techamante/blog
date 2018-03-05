@@ -35,9 +35,12 @@ export default ({ data }) => {
           className="article-post"
           dangerouslySetInnerHTML={{ __html: html }}
         />
-        <FacebookProvider appId="177345829718520">
-          <Comments href={window.location.href} />
-        </FacebookProvider>
+        <ReactDisqusComments
+          shortname="youknownow-1"
+          identifier={title}
+          title={title}
+          url={window.location.href}
+        />
       </div>
     </div>
   );
