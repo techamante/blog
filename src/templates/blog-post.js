@@ -1,12 +1,12 @@
-import React from "react";
-import { head } from "lodash";
+import React from 'react';
+import { head } from 'lodash';
 
 export default ({ data }) => {
   const {
     body: { childMarkdownRemark: { html } },
     featuredImage: featuredImage,
     title: { title },
-    author: { author }
+    author: { author },
   } = data.contentfulPost;
 
   return (

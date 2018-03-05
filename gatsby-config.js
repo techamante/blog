@@ -1,11 +1,11 @@
-require("dotenv").load();
+require('dotenv').load();
 
 module.exports = {
   siteMetadata: {
-    title: `YouKnowNow.Info`
+    title: `YouKnowNow.Info`,
   },
   plugins: [
-    "gatsby-plugin-sass",
+    'gatsby-plugin-sass',
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-glamor`,
@@ -13,15 +13,15 @@ module.exports = {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.SPACE_ID,
-        accessToken: process.env.ACCESS_TOKEN
-      }
+        accessToken: process.env.ACCESS_TOKEN,
+      },
     },
 
     {
       resolve: `gatsby-plugin-typography`,
       options: {
-        pathToConfigModule: `src/utils/typography`
-      }
-    }
-  ]
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
+  ],
 };
