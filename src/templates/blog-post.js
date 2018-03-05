@@ -4,14 +4,14 @@ import { head } from "lodash";
 export default ({ data }) => {
   const {
     body: { childMarkdownRemark: { html } },
-    featuredImage: { sizes: { src } },
+    featuredImage: featuredImage,
     title: { title },
     author: { author }
   } = data.contentfulPost;
-  console.log(author);
+
   return (
     <div>
-      <img src={src} />
+      {featuredImage && <img src={featuredImage.sizes.src} />}
       <h1>{title}</h1>
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </div>
