@@ -1,7 +1,7 @@
 /* eslint react/no-danger: 0 */
 import _ from 'lodash';
 import React from 'react';
-import ReactDisqusComments from 'react-disqus-comments';
+import FacebookProvider, { Comments } from 'react-facebook';
 import { PostHeading, Share } from '../components';
 
 export default ({ data }) => {
@@ -35,12 +35,9 @@ export default ({ data }) => {
           className="article-post"
           dangerouslySetInnerHTML={{ __html: html }}
         />
-        <ReactDisqusComments
-          shortname="test"
-          identifier={title}
-          title={title}
-          url={`http://localhost:8000/${title}`}
-        />
+        <FacebookProvider appId="177345829718520">
+          <Comments href={window.location.href} />
+        </FacebookProvider>
       </div>
     </div>
   );
