@@ -8,6 +8,7 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
+    "dotenv": "^5.0.1",
     "gatsby": "^1.9.223",
     "gatsby-link": "^1.6.38",
     "gatsby-plugin-glamor": "^1.6.13",

@@ -1,6 +1,8 @@
+require("dotenv").load();
+
 module.exports = {
   siteMetadata: {
-    title: `Blah Blah Fake Title`
+    title: `YouKnowNow.Info`
   },
   plugins: [
     "gatsby-plugin-sass",
@@ -10,8 +12,8 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: `yxalsn9it22r`,
-        accessToken: `3df98e083dd0c4417ba477c10ac5b99e7e48bc5c6b1a2a066571faacb407188e`
+        spaceId: process.env.SPACE_ID,
+        accessToken: process.env.ACCESS_TOKEN
       }
     },
 
