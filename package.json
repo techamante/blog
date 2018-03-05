@@ -5,7 +5,8 @@
   "scripts": {
     "develop": "gatsby develop",
     "build": "gatsby build",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "precommit": "lint-staged"
   },
   "dependencies": {
     "dotenv": "^5.0.1",
@@ -41,7 +42,30 @@
     "eslint-plugin-react": "^7.7.0",
     "font-awesome": "^4.7.0",
     "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
     "prettier": "^1.11.1",
     "prettier-eslint": "^8.8.1"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.css": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.scss": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.md": [
+      "npm run lint:textfix",
+      "git add"
+    ]
   }
 }
