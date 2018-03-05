@@ -3,8 +3,9 @@ import emergence from 'emergence.js';
 import 'animate.css/animate.css';
 import 'font-awesome/css/font-awesome.css';
 import '../assets/scss/bootstrap-theme.scss';
+import '../assets/scss/mediumish.css';
 
-import TopNavigation from '../components/TopNavigation';
+import { TopNavigation, Footer } from '../components';
 
 // eslint-disable-line react/prefer-stateless-function
 export default class Layout extends React.Component {
@@ -20,7 +21,10 @@ export default class Layout extends React.Component {
     return (
       <div>
         <TopNavigation title={site.siteMetadata.title} />
-        <div className="container">{children()}</div>
+        <div className="container">
+          {children()}
+          <Footer />
+        </div>
       </div>
     );
   }

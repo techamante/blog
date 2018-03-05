@@ -2,7 +2,8 @@ require('dotenv').load();
 
 module.exports = {
   siteMetadata: {
-    title: 'YouKnowNow',
+    title: 'You Know Now',
+    siteUrl: 'https://www.youknownow.info',
   },
   plugins: [
     'gatsby-plugin-sass',
@@ -16,13 +17,6 @@ module.exports = {
         accessToken: process.env.ACCESS_TOKEN,
       },
     },
-
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
@@ -31,6 +25,37 @@ module.exports = {
         head: false,
         // Setting this parameter is optional
         anonymize: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/sitemap.xml`,
+        query: `
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+
+            allSitePage {
+              edges {
+                node {
+                  path
+                }
+              }
+            }
+        }`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Righteous%7CMerriweather:300,300i,400,400i,700,700i`,
+          'Righteous',
+        ],
       },
     },
   ],
