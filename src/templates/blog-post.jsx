@@ -1,17 +1,17 @@
+/* eslint react/no-danger: 0 */
+
 import React from 'react';
-import { head } from 'lodash';
 
 export default ({ data }) => {
   const {
     body: { childMarkdownRemark: { html } },
-    featuredImage: featuredImage,
+    featuredImage,
     title: { title },
-    author: { author },
   } = data.contentfulPost;
 
   return (
     <div>
-      {featuredImage && <img src={featuredImage.sizes.src} />}
+      {featuredImage && <img src={featuredImage.sizes.src} alt={title} />}
       <h1>{title}</h1>
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </div>

@@ -5,11 +5,12 @@ import Link from 'gatsby-link';
 
 import { rhythm } from '../utils/typography';
 
-export default ({ data: { allContentfulPost: { totalCount, edges } } }) => (
+export default ({ data: { allContentfulPost: { edges } } }) => (
   <div>
     {edges.map(({ node }) => (
       <div key={node.id} id={node.id} style={{ marginBottom: '15px' }}>
         <Link
+          href={`/articles/${node.slug}`}
           to={`/articles/${node.slug}`}
           css={{ textDecoration: 'none', color: 'inherit' }}
         >
