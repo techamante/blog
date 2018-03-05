@@ -13,6 +13,7 @@
     "gatsby": "^1.9.223",
     "gatsby-link": "^1.6.38",
     "gatsby-plugin-glamor": "^1.6.13",
+    "gatsby-plugin-google-analytics": "^1.0.20",
     "gatsby-plugin-react-helmet": "^2.0.6",
     "gatsby-plugin-sass": "^1.0.18",
     "gatsby-plugin-typography": "^1.7.17",
