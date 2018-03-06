@@ -12,7 +12,9 @@ export default ({ data }) => {
     createdAt,
     title: { title },
   } = data.contentfulPost;
-  console.log(createdAt);
+
+  const { siteMetadata: { siteUrl } } = data.site;
+  const pageUrl = `${siteUrl}/${title}`;
   return (
     <div className="row">
       <div className="col-md-2 col-xs-12">
@@ -39,7 +41,7 @@ export default ({ data }) => {
           shortname="youknownow-1"
           identifier={title}
           title={title}
-          url={window.location.href}
+          url={pageUrl}
         />
       </div>
     </div>
@@ -72,6 +74,11 @@ export const query = graphql`
         }
       }
       createdAt
+    }
+    site {
+      siteMetadata {
+        siteUrl
+      }
     }
   }
 `;
